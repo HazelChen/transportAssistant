@@ -6,9 +6,28 @@ public class TrainInfomation {
 	private String lastStation;
 	private String startStation;
 	private String startTime;
+	private String arriveStation;
 	private String arriveTime;
-	private int mileage;
+	private String mileage;
 	private String takeTime;
+	private double price;
+	
+	public TrainInfomation(){}
+	
+	public TrainInfomation(String trainCode, String firstStation, String lastStation,
+			String startStation, String startTime, String arriveStation, String arriveTime, 
+			String mileage, String takeTime) {
+		
+		this.trainCode = trainCode;
+		this.firstStation = firstStation;
+		this.lastStation = lastStation;
+		this.startStation = startStation;
+		this.startTime = startTime;
+		this.arriveStation = arriveStation;
+		this.arriveTime = arriveTime;
+		this.mileage = mileage;
+		this.takeTime = takeTime;
+	}
 
 	public String getTrainCode() {
 		return trainCode;
@@ -58,11 +77,11 @@ public class TrainInfomation {
 		this.arriveTime = arriveTime;
 	}
 
-	public int getMileage() {
+	public String getMileage() {
 		return mileage;
 	}
 
-	public void setMileage(int mileage) {
+	public void setMileage(String mileage) {
 		this.mileage = mileage;
 	}
 
@@ -74,4 +93,34 @@ public class TrainInfomation {
 		this.takeTime = takeTime;
 	}
 
+	public double getPrice() {
+		return price;
+	}
+
+	public void setPrice(double price) {
+		this.price = price;
+	}
+
+	public String getArriveStation() {
+		return arriveStation;
+	}
+
+	public void setArriveStation(String arriveStation) {
+		this.arriveStation = arriveStation;
+	}
+	
+	@Override
+	public String toString() {
+		String info =  "车次号:" + trainCode + "\n" 
+				+ "始发站:" + firstStation + "\n" 
+				+ "到达站:" + lastStation + "\n" 
+				+ "出发站:" + startStation + "\n"
+				+ "出发时间:" + startTime + "\n"
+				+ "到达站:" + arriveStation + "\n"
+				+ "到达时间:" + arriveTime + "\n"
+				+ "里程:" + mileage + "\n"
+				+ "运行时间:" + takeTime + "\n"
+				+ "价格:" + price + "\n";
+		return info;
+	}
 }

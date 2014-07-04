@@ -5,7 +5,7 @@ public class TrainSearcher {
 	
 	private static final String BY_STATION_NAME_OPERATION = "getStationAndTimeByStationName";
 	
-	public void search(String from, String to) {
+	public String search(String from, String to) {
 		String url = TRAIN_WEB_SERVICE_URL + "//" + BY_STATION_NAME_OPERATION;
 		WebServiceInvoker invoker = new WebServiceInvoker(url);
 		
@@ -17,6 +17,6 @@ public class TrainSearcher {
 		invoker.add(p3);
 		
 		String responseXml = invoker.invoke();
-		System.out.println(responseXml);
+		return responseXml;
 	}
 }
