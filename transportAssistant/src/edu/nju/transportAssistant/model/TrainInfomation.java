@@ -27,6 +27,7 @@ public class TrainInfomation {
 		this.arriveTime = arriveTime;
 		this.mileage = mileage;
 		this.takeTime = takeTime;
+		this.price = ((int)(((Math.random() * 400) + 50) * 100)) / 100.0;
 	}
 
 	public String getTrainCode() {
