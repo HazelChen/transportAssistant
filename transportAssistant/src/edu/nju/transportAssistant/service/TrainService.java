@@ -19,11 +19,6 @@ public class TrainService {
 		String xml = searcher.search(from, to);
 		ArrayList<TrainInfomation> trains = analyzer.analyse(xml);
 		
-		for (TrainInfomation trainInfomation : trains) {
-			System.out.println();
-			System.out.println(trainInfomation);
-		}
-		
 		return trains;
 	}
 }

@@ -6,7 +6,7 @@ public class FlightsSearcher {
 	private static final String BY_STATION_NAME_OPERATION = "getDomesticAirlinesTime";
 	
 	public String search(String from, String to, String dateString) {
-		String url = FLIGHTS_WEB_SERVICE_URL + "//" + BY_STATION_NAME_OPERATION;
+		String url = FLIGHTS_WEB_SERVICE_URL + "/" + BY_STATION_NAME_OPERATION;
 		WebServiceInvoker invoker = new WebServiceInvoker(url);
 		
 		WebServiceParameter p1 = new WebServiceParameter("startCity", from);

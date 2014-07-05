@@ -29,6 +29,13 @@ public class TrainInfomation {
 		this.takeTime = takeTime;
 		this.price = ((int)(((Math.random() * 400) + 50) * 100)) / 100.0;
 	}
+	
+	public Transport getTransport() {
+		Transport transport = new Transport("火车", trainCode, 
+				startStation, arriveStation, startTime, arriveTime, 
+				takeTime, price);
+		return transport;
+	}
 
 	public String getTrainCode() {
 		return trainCode;

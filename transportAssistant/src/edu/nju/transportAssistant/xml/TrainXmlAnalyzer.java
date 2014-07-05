@@ -18,8 +18,9 @@ public class TrainXmlAnalyzer {
 			
 			TrainInfomation train = new TrainInfomation(proprties.get(0), 
 					proprties.get(1), proprties.get(2), proprties.get(3), 
-					proprties.get(4), proprties.get(5), proprties.get(6), 
-					proprties.get(7), proprties.get(8));
+					proprties.get(4).substring(0, 5), proprties.get(5), 
+					proprties.get(6).substring(0, 5), proprties.get(7), 
+					proprties.get(8));
 			trains.add(train);
 		}
 		return trains;

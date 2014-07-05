@@ -10,6 +10,7 @@ public class Flights {
 	private String mode;
 	private String airlineStop;
 	private String week;
+	private double price;
 	
 	public Flights(){}
 	
@@ -20,13 +21,21 @@ public class Flights {
 		this.airlineCode = airlineCode;
 		this.startDrome = startDrome;
 		this.arriveDrome = arriveDrome;
-		this.startTime = startDrome;
-		this.arriveTime = arriveTime;
 		this.startTime = startTime;
 		this.arriveTime = arriveTime;
 		this.mode = mode;
 		this.airlineStop = airlineStop;
 		this.week = week;
+		this.price = ((int)(((Math.random() * 1000) + 100) * 100)) / 100.0;
+	}
+	
+	public Transport getTransport() {
+		String duration = calDuration(startTime, arriveTime);
+		
+		Transport transport = new Transport("飞机", airlineCode, 
+				startDrome, arriveDrome, startTime, arriveTime, 
+				duration, price);
+		return transport;
 	}
 
 	public String getCompany() {
@@ -102,4 +111,44 @@ public class Flights {
 		this.week = week;
 	}
 
+	public double getPrice() {
+		return price;
+	}
+
+	public void setPrice(double price) {
+		this.price = price;
+	}
+	
+	@Override
+	public String toString() {
+		String info = "航空公司:" + company + "\n"
+				+ "航班号:" + airlineCode + "\n"
+				+ "出发:" + startDrome + "\n"
+				+ "到达:" + arriveDrome + "\n"
+				+ "出发时间" + startTime + "\n"
+				+ "到达时间" + arriveTime + "\n"
+				+ "模式:" + mode + "\n"
+				+ "中间停:" + airlineStop + "\n"
+				+ "星期:" + week + "\n"
+				+ "价格:" + price + "\n";
+		return info;
+	}
+
+	private String calDuration(String startTime, String arriveTime) {
+		String[] asplit = startTime.split(":");
+		String[] bsplit = arriveTime.split(":");
+		int ahour = Integer.parseInt(asplit[0]);
+		int aminute = Integer.parseInt(asplit[1]);
+		int bhour = Integer.parseInt(bsplit[0]);
+		int bminute = Integer.parseInt(bsplit[1]);
+		int atotal = ahour*60+aminute;
+		int btotal = bhour*60+bminute;
+		int deep = btotal - atotal;
+		if(deep<0){
+			deep = -deep;
+		}
+		String s = deep/60+":"+deep%60;
+		return s;
+
+	}
 }
