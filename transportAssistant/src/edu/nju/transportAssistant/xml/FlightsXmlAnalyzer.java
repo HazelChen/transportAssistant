@@ -16,7 +16,13 @@ public class FlightsXmlAnalyzer {
 				break;
 			}
 			
-			Flights flights = new Flights(proprties.get(0), proprties.get(1),
+			String company = proprties.get(0);
+			
+			if (company.equals("没有航班") || company.equals("出发或抵达的城市不被支持")) {
+				break;
+			}
+			
+			Flights flights = new Flights(company, proprties.get(1),
 					proprties.get(2), proprties.get(3), proprties.get(4), 
 					proprties.get(5), proprties.get(6), proprties.get(7), 
 					proprties.get(8)); 

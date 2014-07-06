@@ -135,6 +135,7 @@ public class Flights {
 	}
 
 	private String calDuration(String startTime, String arriveTime) {
+		System.out.println(this);
 		String[] asplit = startTime.split(":");
 		String[] bsplit = arriveTime.split(":");
 		int ahour = Integer.parseInt(asplit[0]);

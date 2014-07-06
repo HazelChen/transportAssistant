@@ -5,16 +5,6 @@
 	version="3.0">
 	<display-name>transportAssistant</display-name>
 	
-	<filter>     
-		<filter-name>ipFilter</filter-name>     
-		<filter-class>edu.nju.transportAssistant.filters.IpFilter</filter-class>     
-	</filter>
-	
-	<filter-mapping>  
-		<filter-name>ipFilter</filter-name>  
-		<url-pattern>*.xhtml</url-pattern>
-	</filter-mapping>
-	
 	<servlet>
 		<servlet-name>Faces Servlet</servlet-name>
 		<servlet-class>javax.faces.webapp.FacesServlet</servlet-class>

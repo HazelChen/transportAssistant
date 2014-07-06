@@ -16,6 +16,10 @@ public class TrainXmlAnalyzer {
 				break;
 			}
 			
+			if (proprties.get(0).equals("----")) {
+				break;
+			}
+			
 			TrainInfomation train = new TrainInfomation(proprties.get(0), 
 					proprties.get(1), proprties.get(2), proprties.get(3), 
 					proprties.get(4).substring(0, 5), proprties.get(5), 
