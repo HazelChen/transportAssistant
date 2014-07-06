@@ -54,6 +54,10 @@ public class ServiceFacade {
 	public String getIpPlace(String ip) {
 		return ipService.analyse(ip);
 	}
+	
+	public void sendEmail(String email, String content) {
+		mailService.sendEmail(email, content);
+	}
 
 	private boolean isTimeIn(String startTime, String endTime, String realTime) {
 		String[] fromsplit = startTime.split(":");
